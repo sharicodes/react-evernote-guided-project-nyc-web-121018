@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
-const NoteViewer = (props) => {
+const NoteViewer = props => {
+  console.log(props.note);
   return (
     <Fragment>
-      <h2>Title</h2>
-      <p>Body</p>
+      <h2>{props.note.title}</h2>
+      <p>{props.note.body}</p>
       <button>Edit</button>
     </Fragment>
   );
-}
+};
 
 export default NoteViewer;
