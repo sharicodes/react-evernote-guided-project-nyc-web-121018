@@ -1,16 +1,10 @@
 import React from "react";
 
-const NoteItem = props => {
-  return (
-    <li onClick={() => props.selectNote(props.note.id)}>
-      <h2>{props.note.title}</h2>
-      <p>
-        {props.note.body.length > 50
-          ? props.note.body.slice(0, 50) + "..."
-          : props.note.body}
-      </p>
-    </li>
-  );
-};
+const NoteItem = props => (
+  <li onClick={() => props.handleClick(props.note)}>
+    <h2>{props.note.title}</h2>
+    <p>{props.note.body.slice(0, 20)}...</p>
+  </li>
+);
 
 export default NoteItem;

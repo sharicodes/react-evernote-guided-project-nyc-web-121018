@@ -6,9 +6,11 @@ import Content from "./Content";
 class NoteContainer extends Component {
   constructor() {
     super();
+
     this.state = {
       notes: [],
-      selectedNote: {}
+      selectedNote: null,
+      noteToEdit: null
     };
   }
 
@@ -22,24 +24,52 @@ class NoteContainer extends Component {
       );
   }
 
-  selectNote = id => {
-    const selectedNote = this.state.notes.find(note => note.id === id);
-    this.setState({ selectedNote });
-    console.log(selectedNote);
-  };
-
   render() {
-    console.log(this.state.notes);
     return (
       <Fragment>
         <Search />
         <div className="container">
-          <Sidebar notes={this.state.notes} selectNote={this.selectNote} />
-          <Content note={this.state.selectedNote} />
+          <Sidebar
+            notes={this.state.notes}
+            handleClick={this.handleClick}
+            selectedNote={this.state.selectedNote}
+          />
+          <Content
+            selectedNote={this.state.selectedNote}
+            noteToEdit={this.state.noteToEdit}
+            editNote={this.editNote}
+            handleChange={this.handleChange}
+            cancelEditingNote={this.cancelEditingNote}
+          />
         </div>
       </Fragment>
     );
   }
+
+  handleClick = selectedNote => {
+    this.setState({
+      selectedNote: selectedNote,
+      noteToEdit: null
+    });
+  };
+
+  editNote = selectedNote => {
+    this.setState({
+      noteToEdit: selectedNote
+    });
+  };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  cancelEditingNote = () => {
+    this.setState({
+      noteToEdit: null
+    });
+  };
 }
 
 export default NoteContainer;
