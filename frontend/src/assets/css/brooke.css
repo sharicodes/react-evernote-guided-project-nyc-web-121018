@@ -3,10 +3,10 @@
  **/
 
 /* Global Styles */
-@import url('https://fonts.googleapis.com/css?family=Didact+Gothic|IBM+Plex+Mono|Poppins');
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic|IBM+Plex+Mono|Poppins");
 
 * {
-  font-family: 'Didact Gothic'
+  font-family: "Didact Gothic";
 }
 
 body {
@@ -14,16 +14,17 @@ body {
   padding: 0;
 }
 
-
 /* Styles */
-h2, input[name="title"], textarea {
-  font-family: 'IBM Plex Mono'
+h2,
+input[name="title"],
+textarea {
+  font-family: "IBM Plex Mono";
 }
 
 p.instructions {
-	font-family: monospace;
-	font-size: 32px;
-	text-align: center;
+  font-family: monospace;
+  font-size: 32px;
+  text-align: center;
 }
 
 .note-editor input[name="title"] {
@@ -43,9 +44,9 @@ p.instructions {
 
 .nav-bar {
   width: 100%;
-  background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
+  background-image: linear-gradient(to right top, #8c33e3, #696ce8, #4a9eec);
   background-repeat: no-repeat;
-  font-family: 'IBM Plex Mono';
+  font-family: "IBM Plex Mono";
   font-size: 16px;
   letter-spacing: 1.5px;
   font-weight: bolder;
@@ -106,10 +107,9 @@ div.sidebar ul li:first-child {
 
 div.sidebar ul li:hover {
   /* background-color: yellow; */
-  background-image: linear-gradient(#E6E6E6, #F7F7F7);
+  background-image: linear-gradient(#e6e6e6, #f7f7f7);
   background-repeat: no-repeat;
 }
-
 
 /* Layout Styles */
 .app {
@@ -128,19 +128,19 @@ div.sidebar ul li:hover {
 }
 
 .master-detail-element {
-  float:left;
+  float: left;
   margin: 10px 0px;
   padding: 20px;
   border: 2px dashed grey;
 }
 
 .sidebar {
-  width:25%;
+  width: 25%;
   overflow: scroll;
 }
 
 .detail {
-  width:75%;
+  width: 75%;
 }
 
 .note-editor {
@@ -157,31 +157,34 @@ div.sidebar ul li:hover {
   margin-top: 10px;
 }
 
-
 /* Button Style */
 input[type="submit"] {
   height: auto;
   width: auto;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   width: 125px;
   border-radius: 200px;
   margin-right: 10px;
   padding: 5px 35px;
   border: 0px;
-  background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
+  background-image: linear-gradient(to right top, #8c33e3, #696ce8, #4a9eec);
   background-repeat: no-repeat;
   color: white;
   font-size: 14px;
   letter-spacing: 0.5px;
 }
 
-button:hover, .nav-bar:hover, input[type="submit"]:hover {
-  background-image: linear-gradient(to right top, #8A2387, #E94057, #F27121);
+button:hover,
+.nav-bar:hover,
+input[type="submit"]:hover {
+  background-image: linear-gradient(to right top, #8a2387, #e94057, #f27121);
   background-repeat: no-repeat;
 }
 
-button:focus, input[type="submit"]:focus {
+button:focus,
+input[type="submit"]:focus {
   outline: none;
 }
