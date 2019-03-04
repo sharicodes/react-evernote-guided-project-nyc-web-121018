@@ -5,7 +5,7 @@ const Header = () => {
     <div className="nav-bar">
       <ul>
         <li className="nav-item">
-          <h2>Shari's Mod-4 Project</h2>
+          <h2>Shari's Mod-4 Project: Flatnote</h2>
         </li>
       </ul>
     </div>
