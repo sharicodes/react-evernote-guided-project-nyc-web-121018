@@ -9,6 +9,7 @@ import Instructions from "./Instructions";
           try to get it to work in the parent first.
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
+          getDerivedStateFromProps
 */
 class Content extends Component {
   constructor(props) {
@@ -26,22 +27,45 @@ class Content extends Component {
     });
   };
 
+  cancelEdit = () => {
+    this.setState({
+      edit: false
+    });
+  };
+
   renderContent = () => {
     // console.log("here");
+    //console.log(this.props);
     if (this.state.edit === true) {
-      // console.log("here");
-      return <NoteEditor />;
+      //console.log("here");
+      return (
+        <NoteEditor
+          findNote={this.props.findNote}
+          cancelEdit={this.cancelEdit}
+          submittedNote={this.props.submittedNote}
+          note={this.props.note}
+          handleClickCancel={this.props.handleClickCancel}
+          handleClickDelete={this.props.handleClickDelete}
+        />
+      );
     } else if (this.props.note.id !== undefined) {
-      return <NoteViewer note={this.props.note} showEdit={this.showEdit} />;
+      return (
+        <NoteViewer
+          findNote={this.props.findNote}
+          note={this.props.note}
+          showEdit={this.showEdit}
+          handleClickEdit={this.props.handleClickEdit}
+        />
+      );
     } else if (this.state.note.id === undefined && this.state.edit === false) {
       return <Instructions />;
     }
   };
 
   render() {
-    console.log(this.state);
-    console.log(this.props.note);
-    console.log(this.state.note);
+    // console.log(this.state);
+    // console.log(this.props.note);
+    // console.log(this.state.note);
     return (
       <div className="master-detail-element detail">{this.renderContent()}</div>
     );

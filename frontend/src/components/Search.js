@@ -1,15 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const Search = () => {
+const Search = props => {
+  //console.log(props);
   return (
     <div className="filter">
-      <input
-        id="search-bar"
-        type="text"
-        placeholder="Search Notes"
-      />
+      <input id="search-bar" type="text" placeholder="Search Notes" />
     </div>
   );
-}
+};
 
 export default Search;
