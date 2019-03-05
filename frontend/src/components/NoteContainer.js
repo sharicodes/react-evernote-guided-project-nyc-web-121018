@@ -13,7 +13,8 @@ class NoteContainer extends Component {
       selectedNote: {},
       selectedNoteId: null,
       selectedEdit: false,
-      search: ""
+      filteredNotes: [],
+      searchInput: ""
     };
   }
 
@@ -39,6 +40,29 @@ class NoteContainer extends Component {
   findNote = () => {
     return this.state.notes.find(note => note.id === this.state.selectedNoteId);
   };
+
+  handleClickEdit = () => {
+    this.setState({
+      selectedEdit: true
+    });
+  };
+
+  handleSearchInput = event => {
+    //console.log(event.target.value);
+    this.setState({
+      searchInput: event.target.value
+    });
+  };
+  filteredNotes = () => {
+    return this.state.notes.filter(
+      note =>
+        note.title
+          .toLowerCase()
+          .includes(this.state.searchInput.toLowerCase()) ||
+        note.body.toLowerCase().includes(this.state.searchInput.toLowerCase())
+    );
+  };
+
   postNewNote = () => {
     const defaultNote = {
       title: "Title",
@@ -58,34 +82,9 @@ class NoteContainer extends Component {
           notes: [...this.state.notes, newNote]
         });
       });
-  }; //postNewNote()
-
-  handleClickEdit = () => {
-    //the selectedEdit will trigger the conditional render of the NoteEditor Component
-    this.setState({
-      selectedEdit: true
-    });
-  };
-
-  handleChange = event => {
-    //search filter
-    this.setState({
-      searchInput: event.target.value
-    });
-  };
-
-  filteredNotes = () => {
-    return this.state.notes.filter(
-      note =>
-        note.title
-          .toLowerCase()
-          .includes(this.state.searchInput.toLowerCase()) ||
-        note.body.toLowerCase().includes(this.state.searchInput.toLowerCase())
-    );
   };
 
   submittedNote = (title, body) => {
-    //update the notesList with the newly edited note.
     const updatedNote = { title: title, body: body };
 
     fetch(`http://localhost:3000/api/v1/notes/${this.state.selectedNoteId}`, {
@@ -113,10 +112,10 @@ class NoteContainer extends Component {
     //console.log(this.state.selectedNote);
     return (
       <Fragment>
-        <Search updateSearch={this.updateSearch} />
+        <Search handleSearchInput={this.handleSearchInput} />
         <div className="container">
           <Sidebar
-            notes={this.state.notes}
+            notes={this.filteredNotes()}
             selectNote={this.selectNote}
             postNewNote={this.postNewNote}
           />
