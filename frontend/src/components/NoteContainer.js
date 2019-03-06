@@ -53,6 +53,7 @@ class NoteContainer extends Component {
       searchInput: event.target.value
     });
   };
+
   filteredNotes = () => {
     return this.state.notes.filter(
       note =>
@@ -62,7 +63,22 @@ class NoteContainer extends Component {
         note.body.toLowerCase().includes(this.state.searchInput.toLowerCase())
     );
   };
-
+  handleClickDelete = () => {
+    fetch(`http://localhost:3000/api/v1/notes/${this.state.selectedNoteId}`, {
+      method: "DELETE"
+    })
+      .then(r => r.json())
+      .then(result => {
+        const filteredNotes = [...this.state.notes].filter(
+          note => note.id !== this.state.selectedNoteId
+        );
+        this.setState({
+          notes: filteredNotes,
+          selectedNoteId: null,
+          selectedEdit: false
+        });
+      });
+  };
   postNewNote = () => {
     const defaultNote = {
       title: "Title",
@@ -125,6 +141,7 @@ class NoteContainer extends Component {
             selectedEdit={this.state.selectedEdit}
             handleClickEdit={this.handleClickEdit}
             submittedNote={this.submittedNote}
+            handleClickDelete={this.handleClickDelete}
           />
         </div>
       </Fragment>

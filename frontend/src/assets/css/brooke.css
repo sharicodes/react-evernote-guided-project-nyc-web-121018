@@ -4,9 +4,10 @@
 
 /* Global Styles */
 @import url("https://fonts.googleapis.com/css?family=Didact+Gothic|IBM+Plex+Mono|Poppins");
+@import url()"https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Gochi+Hand|Shadows+Into+Light")
 
 * {
-  font-family: "Didact Gothic";
+  font-family: "'Caveat', cursive";
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 h2,
 input[name="title"],
 textarea {
-  font-family: "IBM Plex Mono";
+  font-family: "Caveat, cursive";
 }
 
 p.instructions {
@@ -46,8 +47,8 @@ p.instructions {
   width: 100%;
   background-image: linear-gradient(to right top, #8c33e3, #696ce8, #4a9eec);
   background-repeat: no-repeat;
-  font-family: "IBM Plex Mono";
-  font-size: 16px;
+  font-family: "'Caveat', cursive";
+  font-size: 24px;
   letter-spacing: 1.5px;
   font-weight: bolder;
   display: flex;

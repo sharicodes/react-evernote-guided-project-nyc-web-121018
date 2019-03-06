@@ -18,6 +18,12 @@ class NoteEditor extends Component {
   handleSubmitEdit = event => {
     event.preventDefault();
     this.props.submittedNote(this.state.title, this.state.body);
+    this.props.cancelEdit();
+  };
+
+  handleClickDelete = event => {
+    this.props.deletedNote();
+    this.props.showInstructions();
   };
 
   render() {
@@ -45,6 +51,9 @@ class NoteEditor extends Component {
           />
           <button onClick={() => this.props.cancelEdit()} type="button">
             Cancel
+          </button>
+          <button type="button" onClick={this.props.handleClickDelete}>
+            Delete
           </button>
         </div>
       </form>

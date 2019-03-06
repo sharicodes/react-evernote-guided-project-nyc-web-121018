@@ -33,6 +33,12 @@ class Content extends Component {
     });
   };
 
+  showInstructions = () => {
+    this.setState({
+      edit: false
+    });
+  };
+
   renderContent = () => {
     // console.log("here");
     //console.log(this.props);
