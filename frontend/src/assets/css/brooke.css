@@ -45,7 +45,7 @@ p.instructions {
 
 .nav-bar {
   width: 100%;
-  background-image: linear-gradient(to right top, #8c33e3, #696ce8, #4a9eec);
+  background-image: linear-gradient(to right top, #800a43, #f359a3, #ab0d59);
   background-repeat: no-repeat;
   font-family: "'Caveat', cursive";
   font-size: 24px;
@@ -171,7 +171,7 @@ input[type="submit"] {
   margin-right: 10px;
   padding: 5px 35px;
   border: 0px;
-  background-image: linear-gradient(to right top, #8c33e3, #696ce8, #4a9eec);
+  background-image: linear-gradient(to right top, #800a43, #f359a3, #ab0d59);
   background-repeat: no-repeat;
   color: white;
   font-size: 14px;
@@ -181,7 +181,7 @@ input[type="submit"] {
 button:hover,
 .nav-bar:hover,
 input[type="submit"]:hover {
-  background-image: linear-gradient(to right top, #8a2387, #e94057, #f27121);
+  background-image: linear-gradient(to right top, #800a43, #f359a3, #ab0d591);
   background-repeat: no-repeat;
 }
 
