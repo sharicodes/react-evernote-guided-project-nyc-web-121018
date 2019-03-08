@@ -1,5 +1,4 @@
-README: React Evernote
-======================
+# README: React Evernote
 
 Task Lister is making its return in React! However, this time we'll be kicking it up a notch and using that same backend to drive an Evernote-like frontend built in React.
 
@@ -7,7 +6,7 @@ Your goal will be to complete the baseline deliverables using the provided start
 
 ## Requirements
 
-- [ ] Complete all of the *Deliverables*.
+- [ ] Complete all of the _Deliverables_.
 - [ ] Build out at least 1 stretch goal feature.
 
 ## Setup
@@ -43,29 +42,29 @@ The seed file should create one user for you, so your default `USER_ID` should b
 
 #### Routes
 
-| Method | Route               | Headers                                                              | Body                 |
-| ------ | ------------------- |:--------------------------------------------------------------------:|:--------------------:|
-| GET    | `/api/v1/users`     |                                                                      |                      |
-| GET    | `/api/v1/notes`     |                                                                      |                      |
+| Method | Route               |                                 Headers                                 |         Body         |
+| ------ | ------------------- | :---------------------------------------------------------------------: | :------------------: |
+| GET    | `/api/v1/users`     |                                                                         |                      |
+| GET    | `/api/v1/notes`     |                                                                         |                      |
 | POST   | `/api/v1/notes`     | `'Content-Type': 'application/json'`<br/>`'Accept': 'application/json'` | title, body, user_id |
 | PATCH  | `/api/v1/notes/:id` | `'Content-Type': 'application/json'`<br/>`'Accept': 'application/json'` | title, body, user_id |
 
 **Tips:**
 
-* Test out your routes with [Postman](https://www.getpostman.com/) to see how they work and what they return.
-* Look at the source code! There are many more routes that are not listed that may make your life easier. Use those development skills and hack the code!
+- Test out your routes with [Postman](https://www.getpostman.com/) to see how they work and what they return.
+- Look at the source code! There are many more routes that are not listed that may make your life easier. Use those development skills and hack the code!
 
 ## Provided Code
 
 **Backend**
 
-* The entire backend API is complete for the baseline deliverables.
-* You should not have to modify this code unless you want to add stretch features that are not currently supported by this API.
+- The entire backend API is complete for the baseline deliverables.
+- You should not have to modify this code unless you want to add stretch features that are not currently supported by this API.
 
 **Frontend**
 
-* All CSS styles are provided for you.
-* Many components are provided for you, but most are not completely functional. It is your job to read the code and figure out how to incorporate it into your app.
+- All CSS styles are provided for you.
+- Many components are provided for you, but most are not completely functional. It is your job to read the code and figure out how to incorporate it into your app.
 
 ## Deliverables
 
@@ -105,7 +104,7 @@ Look at the gif below to see how the app should look and behave. These are the b
 
 ## Stretch Goals
 
-When you are finished with the *Delieverables*, you can build out any new features that you want. This is your chance to be creative and make your project unique!
+When you are finished with the _Delieverables_, you can build out any new features that you want. This is your chance to be creative and make your project unique!
 
 Some suggestions:
 
